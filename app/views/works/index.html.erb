@@ -1,0 +1,55 @@
+<h1>works index page</h1>
+
+<h2>list of works</h2>
+
+
+
+
+</ul>
+<h3>album</h3>
+  <% @works.each do |work| %>
+
+    <% if work.category == "album" %>
+      <li>
+        <%= work.category %>
+        <%= work.title %>
+        <%= work.creator %>
+        <%= work.publication_year %>
+      </li>
+    <% end  %>
+
+  <% end %>
+</ul>
+
+</ul>
+
+<h3>book</h3>
+  <% @works.each do |work| %>
+
+    <% if work.category == "book" %>
+      <li>
+        <%= work.category %>
+        <%= work.title %>
+        <%= work.creator %>
+        <%= work.publication_year %>
+      </li>
+    <% end  %>
+
+  <% end %>
+</ul>
+
+</ul>
+<h3>movie</h3>
+  <% @works.each do |work| %>
+
+    <% if work.category == "movie" %>
+      <li>
+        <%= work.category %>
+        <%= work.title %>
+        <%= work.creator %>
+        <%= work.publication_year %>
+      </li>
+    <% end  %>
+
+  <% end %>
+</ul>
