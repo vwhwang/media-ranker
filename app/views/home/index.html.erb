@@ -16,7 +16,7 @@
 <section>
   <h2>Top BOOKS  </h2>
   <ul>
-  <% @works.where(category:"book").sample(5).each do |movie| %>
+  <% @works.where(category:"book").sample(10).each do |movie| %>
     <li><%= movie.title %></li>
   <% end  %>
   </ul>

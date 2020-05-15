@@ -12,7 +12,7 @@
     <% if work.category == "album" %>
       <li>
         <%= work.category %>
-        <%= work.title %>
+        <%= link_to work.title, work_path(work.id) %>
         <%= work.creator %>
         <%= work.publication_year %>
       </li>
@@ -29,7 +29,7 @@
     <% if work.category == "book" %>
       <li>
         <%= work.category %>
-        <%= work.title %>
+        <%= link_to work.title, work_path(work.id) %>
         <%= work.creator %>
         <%= work.publication_year %>
       </li>
@@ -45,7 +45,7 @@
     <% if work.category == "movie" %>
       <li>
         <%= work.category %>
-        <%= work.title %>
+        <%= link_to work.title, work_path(work.id) %>
         <%= work.creator %>
         <%= work.publication_year %>
       </li>
