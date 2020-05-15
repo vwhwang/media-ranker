@@ -10,6 +10,17 @@
   </head>
 
   <body>
+
+  <header>
+    <nav>
+    <h1> Media Ranker</h1>
+    <%= link_to "View top media ",root_path  %>
+    <%= link_to "View all media", works_path %>
+    <%= link_to "Add a new media", new_work_path %>
+    <%= link_to "View all users" ,root_path %>
+    <%= "log in " %>
+    </nav>
+  </header>
     <%= yield %>
   </body>
 </html>
