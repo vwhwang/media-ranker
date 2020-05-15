@@ -1,1 +1,32 @@
 <h1>HOME</h1>
+<section>
+  <h2>Media Spotlight: </h2>
+  <%= @top_work[0].title %> by <%= @top_work[0].creator %>
+</section>
+
+<section>
+  <h2>Top Movies  </h2>
+  <ul>
+  <% @works.where(category:"movie").sample(10).each do |movie| %>
+    <li><%= movie.title %></li>
+  <% end  %>
+  </ul>
+</section>
+
+<section>
+  <h2>Top BOOKS  </h2>
+  <ul>
+  <% @works.where(category:"book").sample(5).each do |movie| %>
+    <li><%= movie.title %></li>
+  <% end  %>
+  </ul>
+</section>
+
+<section>
+  <h2>Top Albums  </h2>
+  <ul>
+  <% @works.where(category:"album").sample(10).each do |movie| %>
+    <li><%= movie.title %></li>
+  <% end  %>
+  </ul>
+</section>
