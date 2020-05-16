@@ -25,8 +25,17 @@ class WorksController < ApplicationController
       redirect_to work_path(@work.id)
       return 
     else  
+
+      if @work.errors.messages[:title].include?("can't be blank")
+        flash.now[:errors] = "can not create title if nil"
+      else  
+        existing_work = Work.find_by(title: @work.title) 
+        flash.now[:errors] = "#{existing_work.title} already existis"
+      end 
+
       render :new 
       return 
+
     end 
   end 
 
@@ -49,6 +58,7 @@ class WorksController < ApplicationController
       redirect_to work_path(@work.id)
       return 
     else  
+      flash.now[:errors] = "can not edit if title is nil"
       render :edit 
       return 
     end 
