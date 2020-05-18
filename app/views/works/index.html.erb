@@ -2,54 +2,24 @@
 
 <h2>list of works</h2>
 
-
-
-
-</ul>
-<h3>album</h3>
-  <% @works.each do |work| %>
-
-    <% if work.category == "album" %>
-      <li>
-        <%= work.category %>
-        <%= link_to work.title, work_path(work.id) %>
-        <%= work.creator %>
-        <%= work.publication_year %>
-      </li>
-    <% end  %>
-
+<% @category.each do | category| %>
+  <table>
+  <h3><%= category %></h3>
+  <tr>
+    <th>Votes</th>
+    <th>Title</th>
+    <th>Created By</th>
+    <th>Published</th>
+    <th>Upvote</th>
+  </tr>
+  <% @works[category].each do |work| %>
+    <tr>
+      <td>Votes</td>
+      <td><%= link_to work.title, work_path(work.id) %></td>
+      <td><%= work.creator %></td>
+      <td><%= work.publication_year %></td>
+      <td>Upvote</td>
+    </tr>
   <% end %>
-</ul>
-
-</ul>
-
-<h3>book</h3>
-  <% @works.each do |work| %>
-
-    <% if work.category == "book" %>
-      <li>
-        <%= work.category %>
-        <%= link_to work.title, work_path(work.id) %>
-        <%= work.creator %>
-        <%= work.publication_year %>
-      </li>
-    <% end  %>
-
-  <% end %>
-</ul>
-
-</ul>
-<h3>movie</h3>
-  <% @works.each do |work| %>
-
-    <% if work.category == "movie" %>
-      <li>
-        <%= work.category %>
-        <%= link_to work.title, work_path(work.id) %>
-        <%= work.creator %>
-        <%= work.publication_year %>
-      </li>
-    <% end  %>
-
-  <% end %>
-</ul>
+  </table>
+<% end  %>

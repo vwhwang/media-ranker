@@ -1,7 +1,8 @@
 class WorksController < ApplicationController
   
   def index
-    @works = Work.all
+    @works = Work.all.group_by{|work| work.category}
+    @category = @works.keys
   end 
   
   def show 

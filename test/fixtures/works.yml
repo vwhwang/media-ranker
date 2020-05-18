@@ -1,6 +1,9 @@
 kindred:
   title: Kindred
+  category: book
 parable:
   title: Parable of the Sower
+  category: book
 poodr:
   title: Practical Object Oriented Design in Ruby
+  category: book
