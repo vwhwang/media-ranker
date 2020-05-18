@@ -17,7 +17,7 @@
     <%= link_to "View top media ",root_path  %>
     <%= link_to "View all media", works_path %>
     <%= link_to "Add a new media", new_work_path %>
-    <%= link_to "View all users" ,root_path %>
+    <%= link_to "View all users" ,users_path %>
 
     <% if session[:user_id].nil?  %>  
       <%= link_to "Log in", login_path %>
