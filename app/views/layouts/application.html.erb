@@ -18,9 +18,24 @@
     <%= link_to "View all media", works_path %>
     <%= link_to "Add a new media", new_work_path %>
     <%= link_to "View all users" ,root_path %>
-    <%= "log in " %>
+
+    <% if session[:user_id].nil?  %>  
+      <%= link_to "Log in", login_path %>
+    <% else %>
+      <%= link_to "logout",  logout_path , method: :post  %>
+    <% end %>
+
     </nav>
+
+
   </header>
+
+    <section class="alert alert-primary">
+    <% flash.each do |name, message| %>
+      <%= message %>
+    <% end  %>
+    </section>
+
     <%= yield %>
   </body>
 </html>
