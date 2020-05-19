@@ -3,13 +3,15 @@ class Work < ApplicationRecord
   validates :title , presence: true , uniqueness:true 
 
   def self.top_work
-    @top_work = Work.all[0]
-    return @top_work 
+    @top_work = Work.all.sort_by{|work| -(work.votes.count)}
+    return @top_work[0] 
   end 
 
   def self.top_10(category)
     @works = Work.where(category: category)
-    return  @works.sample(3)
+    @top_10 = @works.sort_by{|work| -(work.votes.count)}
+    
+    return  @top_10[0..9]
   end 
 
 end

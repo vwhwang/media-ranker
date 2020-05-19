@@ -1,17 +1,21 @@
 <h1>HOME</h1>
 <section>
-  <h2>Media Spotlight: </h2>
-  <%= Work.top_work.title %> by <%= Work.top_work.creator %>
+  <h2>Media Spotlight: <%=Work.top_work.title  %> </h2>
+  <%= Work.top_work.votes.count %> votes by <%= Work.top_work.creator %>
 </section>
 
 
 <% @category.each do |category| %>
   <section>
     <h2>Top <%= category  %> </h2>
-    <ul>
+
     <% Work.top_10(category).each do |work| %>
-      <li><%= work.title %></li>
-    <% end %>
+    <ul>
+      <li><%=link_to work.title, work_path(work.id) %></li>
+      <li>by <%= work.creator %></li>
+      <li>votes: <%= work.votes.count %></li>
     </ul>
+    <% end %>
+
   </section>
 <% end  %>
