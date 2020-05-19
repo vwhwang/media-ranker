@@ -42,13 +42,29 @@ describe User do
     describe 'vote' do 
       it "can have many votes" do
         new_user = User.create(username:"bob")
+        work1 = works(:kindred)
+        work2 = works(:parable)
+
+        expect(new_user.votes.count).must_equal 0 
+
+        vote1 = Vote.create(work:work1, user:new_user)
+        vote2 = Vote.create(work:work2, user:new_user)
+
+        expect(new_user.votes.count).must_equal 2
+      end 
+
+
+      it "same user cannot vote for the same work when already voted" do
+        new_user = User.create(username:"bob")
         work = works(:kindred)
+        
         expect(new_user.votes.count).must_equal 0 
 
         vote1 = Vote.create(work:work, user:new_user)
+        expect(new_user.votes.count).must_equal 1
         vote2 = Vote.create(work:work, user:new_user)
 
-        expect(new_user.votes.count).must_equal 2
+        expect(new_user.votes.count).must_equal 1
       end 
     end 
 

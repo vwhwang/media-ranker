@@ -50,13 +50,14 @@ describe Work do
 
   describe 'relations' do 
     describe 'vote' do 
-      it "can have many votes" do
+      it "can have many votes from different user " do
         new_work = Work.create(title:"test new work")
-        user = users(:oscar)
+        user1 = users(:oscar)
+        user2 = users(:andrew)
         expect(new_work.votes.count).must_equal 0 
 
-        vote1 = Vote.create(work:new_work, user:user)
-        vote2 = Vote.create(work:new_work, user:user)
+        vote1 = Vote.create(work:new_work, user:user1)
+        vote2 = Vote.create(work:new_work, user:user2)
 
         expect(new_work.votes.count).must_equal 2
       end 
