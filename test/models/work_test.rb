@@ -45,9 +45,21 @@ describe Work do
         expect(top_work.count).must_equal 3
       end 
 
-    
-
     end 
+  end 
 
+  describe 'relations' do 
+    describe 'vote' do 
+      it "can have many votes" do
+        new_work = Work.create(title:"test new work")
+        user = users(:oscar)
+        expect(new_work.votes.count).must_equal 0 
+
+        vote1 = Vote.create(work:new_work, user:user)
+        vote2 = Vote.create(work:new_work, user:user)
+
+        expect(new_work.votes.count).must_equal 2
+      end 
+    end 
   end 
 end
