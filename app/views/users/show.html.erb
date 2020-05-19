@@ -6,6 +6,7 @@
     <th>Created By</th>
     <th>Published</th>
     <th>Category</th>
+    <th>Voted on</th>
   </tr>
 <%@user.votes.each do |vote| %>
   <tr>
@@ -13,6 +14,7 @@
     <td><%= vote.work.creator %></td>
     <td><%= vote.work.publication_year %></td>
     <td><%= vote.work.category %></td>
+    <td><%= vote.created_at.strftime('%B %d, %Y') %></td>
   </tr>
 <% end  %>
 
