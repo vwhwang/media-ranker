@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get 'home/index', to: 'home#index', as: 'home'
   root to: 'home#index'
   resources :works 
+
+  resources :works do 
+    post '/upvote', to: "votes#upvote", as: "upvote"
+  end 
 end
