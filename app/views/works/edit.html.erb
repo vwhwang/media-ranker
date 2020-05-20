@@ -1,2 +1,5 @@
-<h1>edit page</h1>
-<%= render partial: "form", locals: {action_name: "Edit"} %>
+<main>
+
+<h2>Edit This <%= @work.category.capitalize %></h2>
+<%= render partial: "form", locals: {action_name: "Update"} %>
+</main>

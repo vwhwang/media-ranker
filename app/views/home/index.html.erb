@@ -18,7 +18,7 @@
       <% @category.each do |category| %>
         <section class="top-ten__list-container">
 
-        <h2 class="top-ten__header">Top <%= category  %> </h2>
+        <h2 class="top-ten__header">Top <%= category.capitalize  %> </h2>
         
       <% Work.top_10(category).each do |work| %>
       <ul class="list-group top-ten__list">
