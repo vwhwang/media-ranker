@@ -36,9 +36,11 @@
     </nav>
   </header>
 
-    <section class="alert alert-primary">
+    <section class="alert__container">
     <% flash.each do |name, message| %>
-      <%= message %>
+    <div class="alert alert-warning">
+      <span><%= message %></span>
+      </div>
     <% end  %>
     </section>
 
