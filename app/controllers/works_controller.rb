@@ -23,6 +23,7 @@ class WorksController < ApplicationController
     @work = Work.new(work_params)
 
     if @work.save
+      flash[:notice] = "Successfully created work #{@work.title}"
       redirect_to work_path(@work.id)
       return 
     else  
@@ -31,7 +32,7 @@ class WorksController < ApplicationController
         flash.now[:errors] = "can not create title if nil"
       else  
         existing_work = Work.find_by(title: @work.title) 
-        flash.now[:errors] = "#{existing_work.title} already existis"
+        flash.now[:errors] = "#{existing_work.title} already exists"
       end 
 
       render :new 
@@ -56,6 +57,7 @@ class WorksController < ApplicationController
       head :not_found
       return 
     elsif @work.update(work_params)
+      flash[:notice] = "Successfully updated work #{@work.title}"
       redirect_to work_path(@work.id)
       return 
     else  

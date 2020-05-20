@@ -38,9 +38,17 @@
 
     <section class="alert__container">
     <% flash.each do |name, message| %>
-    <div class="alert alert-warning">
-      <span><%= message %></span>
+      <% if name == "errors" %>
+      <div class="alert alert-warning">
+        <span>Sorry, there is a problem: <%= message %></span>
       </div>
+      <% else %>
+      <div class="alert alert-success">
+        <span><%= message %></span>
+      </div>
+
+      <% end  %>
+
     <% end  %>
     </section>
 
