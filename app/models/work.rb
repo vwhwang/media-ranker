@@ -9,7 +9,7 @@ class Work < ApplicationRecord
 
   def self.top_10(category)
     @works = Work.where(category: category)
-    @top_10 = @works.sort_by{|work| -(work.votes.count)}
+    @top_10 = @works.sort_by{|work| [-(work.votes.count),work.title]}
     
     return  @top_10[0..9]
   end 
