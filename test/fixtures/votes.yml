@@ -4,3 +4,30 @@ apple:
 banana:
   work: parable
   user: oscar 
+kiwi:
+  work: parable
+  user: andrew
+vote1:
+  work: test1
+  user: vicki 
+vote2:
+  work: test2
+  user: vicki 
+vote3:
+  work: test3
+  user: vicki 
+vote4:
+  work: test4
+  user: vicki 
+vote5:
+  work: test5
+  user: vicki 
+vote6:
+  work: test6
+  user: vicki 
+vote7:
+  work: test7
+  user: vicki 
+vote8:
+  work: test8
+  user: vicki 

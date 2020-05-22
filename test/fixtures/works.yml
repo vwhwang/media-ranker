@@ -7,3 +7,31 @@ parable:
 poodr:
   title: Practical Object Oriented Design in Ruby
   category: book
+test1:
+  title: test1
+  category: book 
+test2:
+  title: test2
+  category: book 
+test3:
+  title: test3
+  category: book 
+test4:
+  title: test4
+  category: book 
+test5:
+  title: test5
+  category: book 
+test6:
+  title: test6
+  category: book 
+test7:
+  title: test7
+  category: book 
+test8:
+  title: test8
+  category: book 
+test9:
+  title: test9
+  category: book 
+

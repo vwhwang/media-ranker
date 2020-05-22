@@ -37,12 +37,13 @@ describe Work do
     describe "top logics " do 
       it "top_work will create one top work" do 
         top_work = Work.top_work
-        expect(top_work.title).must_equal "Kindred" 
+        expect(top_work.title).must_equal "Parable of the Sower" 
       end 
 
       it "top_10 will create 3 top work by category" do 
         top_work = Work.top_10("book")
-        expect(top_work.count).must_equal 3
+        expect(top_work.count).must_equal 10
+        expect(top_work[0].title).must_equal "Parable of the Sower" 
       end 
 
     end 
